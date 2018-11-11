@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Deputados.FrequenciaDeputado">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Deputado(a) Federal" />
+            <Label x:Name="NomeParlamentar" />
+            <Label Text="Frequencia nas Sessões Parlamentares" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal">
+                <ListView  x:Name="listView" ItemsSource="{Binding frequencia}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Ano" />
+                                        <Label Text="{Binding Ano}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Presenças " HorizontalOptions="Center"/>
+                                        <Label Text="{Binding PresencasDias}" HorizontalOptions="Center"/>
+                                        <Label Text=" Ausências " HorizontalOptions="Center"/>
+                                        <Label Text="{Binding AusenciasSessoes}" HorizontalOptions="Center"/>
+                                        <Label Text=" Percentual " HorizontalOptions="Center"/>
+                                        <Label Text="{Binding IndicePresenca, StringFormat=' {0:N}%'}" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

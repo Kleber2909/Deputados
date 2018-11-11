@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Deputados.PrincipaisDespesasDeputados">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Principais tipos de despesas" />
+            
+            <StackLayout Orientation="Horizontal">
+                <ListView  x:Name="listView" ItemsSource="{Binding gastosCNPJ}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Ano" />
+                                        <Label Text="{Binding Descricao}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Valor gasto" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding TotalGasto, StringFormat=' {0:C}'}" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

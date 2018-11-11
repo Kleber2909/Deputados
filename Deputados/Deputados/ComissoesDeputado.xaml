@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Deputados.ComissoesDeputado">
+
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Deputado(a) Federal" />
+            <Label x:Name="NomeParlamentar" />
+            <Label Text="Participação em comissões" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal">
+                <ListView  x:Name="listView" 
+                           ItemsSource="{Binding comissoes}"
+                           ItemTapped="Handle_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding SiglaComissao}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding NomeComissao}" />
+                                        <!--   <Label Text="Condicao:" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Condicao}" HorizontalOptions="Center"/>
+                                        <Label Text=", Período" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding EntradaTxt}" HorizontalOptions="Center"/>
+                                        <Label Text=" a " HorizontalOptions="Center"/>
+                                        <Label Text="{Binding SaidaTxt}" HorizontalOptions="Center"/>-->
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

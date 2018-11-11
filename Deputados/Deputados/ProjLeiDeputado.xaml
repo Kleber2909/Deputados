@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Deputados.ProjLeiDeputado">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Deputado(a) Federal" />
+            <Label x:Name="NomeParlamentar" />
+            <Label Text="Projetos de Lei/Emendas" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal">
+                <ListView  x:Name="listView" 
+                           ItemsSource="{Binding projetoLei}"
+                           ItemTapped="Handle_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Nome:" />
+                                        <Label Text="{Binding Nome}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Data Ult. Movimentação:" />
+                                        <Label Text="{Binding DataApresentacao}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

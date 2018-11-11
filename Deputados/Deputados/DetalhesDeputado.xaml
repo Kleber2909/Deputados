@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Deputados.DetalhesDeputado">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image x:Name="Foto" VerticalOptions="Center"/>
+            <Label x:Name="Cargo" Text="Deputado(a) Federal" />
+            <Label x:Name="NomeParlamentar" />
+            <Label x:Name="NomeCompleto" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Partido:" />
+                <Label x:Name="Partido" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Estado:" />
+                <Label x:Name="Estado" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Gastos Totais:" />
+                <Label x:Name="GastosTotais"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Gastos por dia:" />
+                <Label x:Name="GastosDia" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Button x:Name="btFrequencia" Text="Consultar frequência" Clicked="OnBtFrequenciaClicked" />
+                <Button x:Name="btDetComissoes" Text="Detalhe de comissões" Clicked="OnBtDetComissoesClicked"/>
+                <Button x:Name="btProjLei" Text="Projetos de lei" Clicked="OnBtProjLeiClicked"/>
+                <Button x:Name="btTiposGastos" Text="Tipos de gastos" Clicked="OnBtTiposGastosClicked"/>
+                <Button x:Name="btEvolGastos" Text="Evolução de gastos" Clicked="OnBtEvolGastosClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

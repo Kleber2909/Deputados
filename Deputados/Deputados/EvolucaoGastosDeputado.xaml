@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Deputados.EvolucaoGastosDeputado">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Deputado(a) Federal" />
+            <Label x:Name="NomeParlamentar" />
+            <Label Text="Gastos por período" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal">
+                <ListView  x:Name="listView" ItemsSource="{Binding evolucao}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Ano" />
+                                        <Label Text="{Binding DataEmissao}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Valor no período" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Valor, StringFormat=' {0:C}'}" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
